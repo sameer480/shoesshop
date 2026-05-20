@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "shoes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+   "scripts": {
+  "dev": "nodemon server.js"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

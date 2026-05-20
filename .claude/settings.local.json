@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(ls \"c:\\\\Users\\\\Sameer\\\\Desktop\\\\Shoes\\\\client\\\\src\" && echo \"---\" && ls \"c:\\\\Users\\\\Sameer\\\\Desktop\\\\Shoes\\\\client\\\\src\\\\pages\" 2>nul || echo \"no pages dir\")"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Sameer\\Desktop\\Shoes"
+    ]
+  }
+}
