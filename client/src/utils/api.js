@@ -1,7 +1,10 @@
 import axios from "axios";
 
+// In production (Vercel), the client and API live on the same domain,
+// so a relative `/api` works. In dev, hit the local Express on 8000.
 const baseURL =
-  import.meta.env.VITE_API_URL || "http://localhost:8000/api";
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.PROD ? "/api" : "http://localhost:8000/api");
 
 const API = axios.create({ baseURL });
 

@@ -1,17 +1,24 @@
 {
-  "$schema": "https://json.schemastore.org/package.json",
-  "name": "shoes",
+  "name": "shoehub",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-   "scripts": {
-  "dev": "nodemon server.js"
-},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "ShoeHub — React + Express + MongoDB, deployable to Vercel.",
+  "main": "api/index.js",
   "type": "commonjs",
+  "scripts": {
+    "dev": "cd server && npm run dev",
+    "build": "cd client && npm install && npm run build"
+  },
   "dependencies": {
-    "concurrently": "^7.6.0"
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "google-auth-library": "^10.6.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.6.2",
+    "nodemailer": "^8.0.7"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
