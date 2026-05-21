@@ -39,10 +39,12 @@ const Home = () => {
         background: "#0a0a0a",
         fontFamily: "'Barlow Condensed', 'Arial Narrow', Arial, sans-serif",
         color: "#fff",
+        overflowX: "hidden",
       }}
     >
       {/* Navbar */}
       <nav
+        className="home-nav"
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -56,7 +58,7 @@ const Home = () => {
           zIndex: 100,
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <div className="home-brand" style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
           <div
             style={{
               width: 34,
@@ -66,6 +68,7 @@ const Home = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              flexShrink: 0,
             }}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
@@ -73,6 +76,7 @@ const Home = () => {
             </svg>
           </div>
           <span
+            className="home-brand-name"
             style={{
               fontSize: 24,
               fontWeight: 900,
@@ -84,7 +88,7 @@ const Home = () => {
           </span>
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+        <div className="home-nav-right" style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <CartIcon />
           <AuthNav />
         </div>
@@ -92,6 +96,7 @@ const Home = () => {
 
       {/* Hero Section */}
       <div
+        className="home-hero"
         style={{
           display: "flex",
           flexDirection: "row",
@@ -130,8 +135,9 @@ const Home = () => {
           </div>
 
           <h1
+            className="home-hero-title"
             style={{
-              fontSize: "clamp(44px, 6vw, 76px)",
+              fontSize: "clamp(36px, 6vw, 76px)",
               fontWeight: 900,
               lineHeight: 1.0,
               textTransform: "uppercase",
@@ -160,6 +166,7 @@ const Home = () => {
           </p>
 
           <div
+            className="home-cta-row"
             style={{
               display: "flex",
               gap: 14,
@@ -171,6 +178,7 @@ const Home = () => {
               onClick={goToShop}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
+              className="home-cta"
               style={{
                 background: "linear-gradient(135deg, #e31c1c, #b01010)",
                 color: "#fff",
@@ -193,6 +201,7 @@ const Home = () => {
               onClick={goToShop}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
+              className="home-cta"
               style={{
                 background: "transparent",
                 color: "#fff",
@@ -212,7 +221,7 @@ const Home = () => {
           </div>
 
           {/* Stats */}
-          <div style={{ display: "flex", gap: 36, marginTop: 52 }}>
+          <div className="home-stats" style={{ display: "flex", gap: 36, marginTop: 52, flexWrap: "wrap" }}>
             {[
               ["500+", "Brands"],
               ["10k+", "Products"],
@@ -339,6 +348,30 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <style>{`
+        /* Tablet */
+        @media (max-width: 768px) {
+          .home-nav { padding: 14px 20px !important; }
+          .home-brand-name { font-size: 20px !important; letter-spacing: 1.5px !important; }
+          .home-hero { padding: 50px 20px !important; gap: 28px !important; }
+          .home-cta { padding: 14px 24px !important; font-size: 14px !important; letter-spacing: 2px !important; }
+          .home-stats { gap: 22px !important; margin-top: 36px !important; }
+        }
+
+        /* Phone */
+        @media (max-width: 480px) {
+          .home-nav { padding: 12px 14px !important; gap: 8px !important; }
+          .home-brand-name { font-size: 18px !important; letter-spacing: 1px !important; }
+          .home-nav-right { gap: 8px !important; }
+          .home-hero { padding: 36px 16px !important; gap: 24px !important; }
+          .home-hero-title { font-size: 32px !important; letter-spacing: 0.5px !important; }
+          .home-cta-row { gap: 10px !important; margin-top: 24px !important; }
+          .home-cta { padding: 13px 18px !important; font-size: 13px !important; letter-spacing: 2px !important; flex: 1 1 auto; }
+          .home-stats { gap: 16px !important; margin-top: 28px !important; }
+          .home-stats > div { flex: 1 1 30%; min-width: 90px; }
+        }
+      `}</style>
     </div>
   );
 };

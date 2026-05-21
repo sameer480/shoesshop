@@ -252,7 +252,10 @@ const Login = () => {
                 theme="filled_black"
                 size="large"
                 text="continue_with"
-                shape="rectangular"
+                shape="pill"
+                useOneTap={false}
+                auto_select={false}
+                itp_support={false}
               />
             </div>
 

@@ -38,9 +38,15 @@ const AuthNav = () => {
 
   if (!user) {
     return (
-      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-        <Link to="/login" style={btnOutline}>Login</Link>
-        <Link to="/register" style={btnSolid}>Register</Link>
+      <div className="authnav-out" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        <Link to="/login" className="authnav-btn" style={btnOutline}>Login</Link>
+        <Link to="/register" className="authnav-btn" style={btnSolid}>Register</Link>
+        <style>{`
+          @media (max-width: 480px) {
+            .authnav-out { gap: 6px !important; }
+            .authnav-btn { padding: 8px 12px !important; font-size: 11px !important; letter-spacing: 1px !important; }
+          }
+        `}</style>
       </div>
     );
   }

@@ -11,9 +11,9 @@ module.exports = async (req, res) => {
   try {
     await connectDB();
   } catch (err) {
+    console.error("DB connection failed:", err);
     return res.status(500).json({
-      message: "Database unavailable",
-      error: err.message,
+      message: `Database unavailable: ${err.message || "unknown error"}`,
     });
   }
   return app(req, res);
