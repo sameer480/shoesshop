@@ -61,6 +61,7 @@ const AuthNav = () => {
     <div ref={ref} style={{ position: "relative" }}>
       <button
         onClick={() => setOpen((v) => !v)}
+        className="authnav-trigger"
         style={{
           display: "flex",
           alignItems: "center",
@@ -108,6 +109,7 @@ const AuthNav = () => {
           </span>
         </div>
         <span
+          className="authnav-name"
           style={{
             fontSize: 13,
             fontWeight: 700,
@@ -121,10 +123,16 @@ const AuthNav = () => {
         >
           {displayName}
         </span>
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style={{ opacity: 0.6 }}>
+        <svg className="authnav-chev" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style={{ opacity: 0.6 }}>
           <path d="M7 10l5 5 5-5z" />
         </svg>
       </button>
+      <style>{`
+        @media (max-width: 600px) {
+          .authnav-trigger { padding: 4px !important; gap: 0 !important; }
+          .authnav-name, .authnav-chev { display: none !important; }
+        }
+      `}</style>
 
       {open && (
         <div
