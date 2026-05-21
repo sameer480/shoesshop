@@ -174,7 +174,7 @@ const Checkout = () => {
       }}
     >
       {/* Navbar */}
-      <nav style={navStyle}>
+      <nav className="page-nav" style={navStyle}>
         <Link to="/" style={{ display: "flex", alignItems: "center", gap: 10, color: "#fff", textDecoration: "none" }}>
           <div style={{ width: 34, height: 34, background: "#e31c1c", borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center" }}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
@@ -423,6 +423,8 @@ const navStyle = {
   position: "sticky", top: 0, background: "rgba(10,10,10,0.92)",
   backdropFilter: "blur(12px)", zIndex: 100,
 };
+
+// className kept literal on the <nav> below: page-nav
 
 const cardStyle = {
   background: "#141414", border: "1.5px solid #1f1f1f",

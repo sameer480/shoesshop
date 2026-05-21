@@ -78,10 +78,12 @@ const Shop = () => {
         background: "#0a0a0a",
         color: "#fff",
         fontFamily: "'Barlow Condensed', 'Arial Narrow', Arial, sans-serif",
+        overflowX: "hidden",
       }}
     >
       {/* Navbar */}
       <nav
+        className="shop-nav"
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -121,6 +123,7 @@ const Shop = () => {
             </svg>
           </div>
           <span
+            className="shop-brand"
             style={{
               fontSize: 22,
               fontWeight: 900,
@@ -132,14 +135,14 @@ const Shop = () => {
           </span>
         </Link>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+        <div className="shop-nav-right" style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <CartIcon />
           <AuthNav />
         </div>
       </nav>
 
       {/* Header */}
-      <div style={{ padding: "60px 32px 20px", textAlign: "center" }}>
+      <div className="shop-header" style={{ padding: "60px 32px 20px", textAlign: "center" }}>
         <p
           style={{
             color: "#e31c1c",
@@ -425,12 +428,24 @@ const Shop = () => {
 
       <style>{`
         @media (max-width: 768px) {
+          .shop-nav { padding: 14px 20px !important; }
+          .shop-brand { font-size: 18px !important; letter-spacing: 1.5px !important; }
+          .shop-header { padding: 40px 20px 16px !important; }
           .shop-tabs button { padding: 9px 18px !important; font-size: 12px !important; }
           .shop-container { padding: 0 16px 60px !important; }
           .shop-grid { gap: 14px !important; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important; }
         }
         @media (max-width: 480px) {
-          .shop-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+          .shop-nav { padding: 12px 14px !important; }
+          .shop-brand { font-size: 16px !important; letter-spacing: 1px !important; }
+          .shop-nav-right { gap: 8px !important; }
+          .shop-header { padding: 28px 14px 12px !important; }
+          .shop-header h1 { font-size: 28px !important; }
+          .shop-header p { font-size: 13px !important; }
+          .shop-tabs { padding: 16px 12px 26px !important; gap: 6px !important; }
+          .shop-tabs button { padding: 8px 14px !important; font-size: 11px !important; letter-spacing: 1.5px !important; }
+          .shop-container { padding: 0 12px 60px !important; }
+          .shop-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
         }
       `}</style>
     </div>

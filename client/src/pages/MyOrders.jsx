@@ -156,6 +156,7 @@ const MyOrders = () => {
     >
       {/* Navbar */}
       <nav
+        className="page-nav"
         style={{
           display: "flex", justifyContent: "space-between", alignItems: "center",
           padding: "18px 32px", borderBottom: "1px solid #1a1a1a",

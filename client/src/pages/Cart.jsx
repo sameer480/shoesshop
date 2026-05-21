@@ -53,6 +53,7 @@ const Cart = () => {
     >
       {/* Navbar */}
       <nav
+        className="page-nav"
         style={{
           display: "flex",
           justifyContent: "space-between",
